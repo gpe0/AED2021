@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/CODE/C++/CLION/aed2122_p01_extra/Tests/mail.h
+string
+-
+
+D:/CODE/C++/CLION/aed2122_p01_extra/Tests/postOffice.cpp
+postOffice.h
+D:/CODE/C++/CLION/aed2122_p01_extra/Tests/postOffice.h
+string
+-
+
+D:/CODE/C++/CLION/aed2122_p01_extra/Tests/postOffice.h
+mail.h
+D:/CODE/C++/CLION/aed2122_p01_extra/Tests/mail.h
+postman.h
+D:/CODE/C++/CLION/aed2122_p01_extra/Tests/postman.h
+vector
+-
+
+D:/CODE/C++/CLION/aed2122_p01_extra/Tests/postman.h
+mail.h
+D:/CODE/C++/CLION/aed2122_p01_extra/Tests/mail.h
+string
+-
+vector
+-
+

@@ -25,7 +25,10 @@ TEST(test, squareR){
 }
 
 TEST(test, missingvalue){
-
+    //EXPECT_EQ(2, FunSearchProblem::smallestMissingValue({-4, 1, 5, 3, 7, 9}));
+    //EXPECT_EQ(0, FunSearchProblem::smallestMissingValue({-4, -2, 0, 0, 0, -5, -1}));
+    //EXPECT_EQ(0, FunSearchProblem::smallestMissingValue({}));
+    EXPECT_EQ(2, FunSearchProblem::smallestMissingValue({1}));
 }
 
 TEST(test, minPages){

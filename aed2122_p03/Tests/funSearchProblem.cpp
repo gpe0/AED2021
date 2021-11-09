@@ -58,9 +58,22 @@ int FunSearchProblem::smallestMissingValue(const vector<int> & values) {
         }
     }
 
-    for (int i = 0; i < max + 1; i++) {
+    if (min > max) {
+        return 0;
+    }
+    bool isIn = false;
+    int n;
+    for (int i = min; i <= max + 1; i++) {
+        isIn = false;
         for (int j = 0; j < values.size(); j++) {
-
+            if (values[j] == i) {
+                isIn = true;
+                break;
+            }
+        }
+        if (!isIn) {
+            n = i;
+            return n;
         }
     }
     return min;

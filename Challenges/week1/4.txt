@@ -1,0 +1,153 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int sumDigits(string& n) {
+    int sum = 0;
+
+    for (int i = 0; i < n.size(); i++) {
+        sum += n[i] - '0';
+    }
+
+    return sum;
+}
+
+void incrementNumber(string& n) {
+    int last = 1;
+    int newElement;
+    for (int i = n.size() - 1; i > -1; i--) {
+        newElement = n[i] - '0' + last;
+        last = 0;
+        if (newElement == 10) {
+            newElement = 0;
+            last = 1;
+        }
+
+        if (i == 0 && newElement == 0 && last == 1) {
+            n.replace(i, 1, 1, '1');
+            n.insert(1, 1,'0');
+        }
+        else {
+            n.replace(i, 1, 1, newElement + '0');
+        }
+
+    }
+}
+
+
+void getValue(string& n, int limit) {
+    int count = 0;
+    int sum = 0;
+
+    while (sum < limit) {
+        sum += 9;
+        count++;
+    }
+
+    if (n.size() >= count) {
+        incrementNumber(n);
+        int sDigits = sumDigits(n);
+        int diff = limit - sDigits;
+        int newCharacter;
+        if (sDigits != limit) {
+            if (diff > 0){
+                for (int i = n.size() - 1; i > -1; i--) {
+                    newCharacter = n[i] - '0';
+                    if (diff - (9 - newCharacter) < 0) {
+                        newCharacter = newCharacter + diff + '0';
+                        diff = 0;
+                    }
+                    else {
+                        diff = diff - (9 - newCharacter);
+                        newCharacter = 9 + '0';
+                    }
+
+                    n.replace(i, 1, 1, newCharacter);
+                    if (diff == 0) {
+                        break;
+                    }
+            }
+
+            }
+            else {
+                int diffTemp = diff;
+                int diffInd;
+                for (int i = n.size() - 1; i > -1; i--) {
+                    newCharacter = n[i] - '0';
+                    diffTemp += newCharacter;
+                    if (diffTemp >= 1) {
+                        diffInd = i - 1;
+                        break;
+
+                    }
+                }
+                while (diffInd != -1 && n[diffInd] == '9') {
+                    diffInd--;
+                }
+
+                if (diffInd == -1) {
+                    n.insert(0, 1, '1');
+                    diffInd = 0;
+                    diff--;
+                } else {
+                    n.replace(diffInd, 1, 1, n[diffInd] + 1);
+                    diff--;
+                }
+
+                string temp = n.substr(diffInd + 1, n.size() - diffInd + 1);
+
+
+                diff = diff + sumDigits(temp);
+
+                for (int i = n.size() - 1; i > diffInd; i--) {
+                    if (9 <= diff) {
+                        n.replace(i, 1, 1, '9');
+                        diff -= 9;
+                    } else {
+                        n.replace(i, 1, 1, diff + '0');
+                        diff -= diff;
+                    }
+                }
+
+
+            }
+        }
+
+    }
+    else {
+        n.erase(n.begin(), n.end());
+        n.insert(0, count - 1, '9');
+        n.insert(0, 1, limit - (9 * (count - 1)) + '0');
+    }
+
+
+
+}
+
+int main() {
+
+    string num1;
+    int n, num2;
+
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        cin >> num1 >> num2;
+
+
+
+        getValue(num1, num2);
+
+
+
+        cout << num1 << endl;
+
+
+
+
+    }
+
+    return 0;
+}
+

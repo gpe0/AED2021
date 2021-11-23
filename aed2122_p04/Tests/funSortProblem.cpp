@@ -1,5 +1,6 @@
 #include "funSortProblem.h"
 #include <algorithm>
+#include <ctime>
 
 FunSortProblem::FunSortProblem() {}
 
@@ -77,10 +78,39 @@ unsigned FunSortProblem::minPlatforms (const vector<float> &arrival, const vecto
 
 }
 
+void quickSort(vector<Piece> &v, int left, int right) {
+
+    if (right - left < 2) {
+        sort(v.begin(), v.end(), [](const Piece & p1, const Piece & p2) -> bool {
+            return p1.getDiameter() < p2.getDiameter();
+        });
+    } else {
+        Piece x = v[v.size()/2];
+        int i = left, j = right - 1;
+
+        for (;;) {
+            while (v[++i].getDiameter() < x.getDiameter());
+            while (x.getDiameter() < v[--j].getDiameter()) ;
+            if (i <j) {
+                swap(v[i], v[j]);
+            }
+            else {
+                break;
+            }
+        }
+        swap(v[i], v[right - 1]);
+        quickSort(v, left, i - 1);
+        quickSort(v, i + 1, right);
+    }
+
+}
 
 // TODO
 
 void FunSortProblem::nutsBolts(vector<Piece> &nuts, vector<Piece> &bolts) {
 
-}
+    quickSort(nuts, 0, nuts.size());
+    quickSort(bolts, 0, bolts.size());
 
+
+}

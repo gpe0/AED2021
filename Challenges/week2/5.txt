@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+#include <algorithm>
+
+
+using namespace std;
+
+
+bool notIn(char c, vector<char> &v) {
+    for (auto x : v) {
+        if (c == x) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+
+    string dna;
+
+    vector<char> order;
+
+    map<char, int> m;
+
+    vector<pair<char, int>> v;
+
+    cin >> dna;
+
+    for (int i = 0; i < dna.size(); i++) {
+        m[dna[i]]++;
+        if (notIn(dna[i], order)) {
+            order.push_back(dna[i]);
+        }
+    }
+
+
+
+
+    for (auto x : order) {
+        v.emplace_back(make_pair(x, m[x]));
+    }
+
+
+    stable_sort(v.begin(), v.end(), [](const auto& a, const auto& b) {return a.second > b.second; });
+
+    for (auto x : v){
+        cout << x.first << " " << x.second << endl;
+   }
+
+
+
+
+    return 0;
+}
+

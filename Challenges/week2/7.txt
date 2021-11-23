@@ -1,0 +1,73 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+#include <algorithm>
+
+
+using namespace std;
+
+int findNumTrips(vector<int> &v, int num) {
+    int n = v.size();
+    int s = 0, trips = 1;
+
+    for (int i = 0; i < n; i++) {
+        s += v[i];
+        if (s > num) {
+            s = v[i];
+            trips++;
+        }
+    }
+    return trips;
+}
+
+int partition(vector<int> v, int sum, int max, int k) {
+    int low = max, high = sum;
+
+    while (low < high) {
+        int mid = (low + high) / 2;
+
+        int trips = findNumTrips(v, mid);
+
+        if (trips <= k) {
+            high = mid;
+        } else {
+            low = mid + 1;
+        }
+
+    }
+    return low;
+}
+
+
+int main() {
+
+    int num, n, sum = 0, max = 0;
+
+    cin >> num;
+
+    vector<int> v;
+
+    for (int i = 0; i < num; i++) {
+        cin >> n;
+        sum += n;
+        if (n > max) {
+            max = n;
+        }
+        v.push_back(n);
+    }
+
+
+    cin >> num;
+
+    for (int i = 0; i < num; i++) {
+        cin >> n;
+        cout << partition(v, sum, max, n) << endl;
+    }
+
+
+
+
+    return 0;
+}
+

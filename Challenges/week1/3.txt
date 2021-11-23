@@ -1,0 +1,98 @@
+#include <iostream>
+#include <sstream>
+
+using namespace std;
+
+
+int matGen(string mat) { // AA-AA-AA
+    if ((int) mat[0] >= 65 && (int) mat[3] < 65 && (int) mat[6] < 65) { //GEN 1
+        return 1;
+    }
+    else if((int) mat[0] < 65 && (int) mat[3] < 65 && (int) mat[6] >= 65) {//GEN 2
+        return 2;
+    }
+    else if((int) mat[0] < 65 && (int) mat[3] >= 65 && (int) mat[6] < 65) {//GEN 3
+        return 3;
+    } else {
+        return 4;
+    }
+}
+
+int matToNum(string mat) {
+    int sum = 0;
+    int let = 0;
+    int num = 0;
+    int gen;
+    for (int i = 0; i < mat.size(); i++) {
+        if (mat[i] != '-') {
+            if ((int) mat[i] < 65) {
+                num = num * 10 + ((int) mat[i] - '0');
+            }
+            else {
+                int letter = (int) mat[i];
+                if (letter > 'Y') {
+                    letter -= 3;
+                } else if (letter > 'W') {
+                    letter -= 2;
+                } else if(letter > 'K') {
+                    letter--;
+                }
+
+                let = let * 23 + (letter - 65);
+            }
+
+        }
+    }
+    gen = matGen(mat);
+    if (gen <= 3) {
+        sum = let * 10000 + num;
+    }
+    else {
+        sum = let * 100 + num;
+    }
+
+    sum = (gen - 1) * 23 * 23 * 10 * 10 * 10 * 10 + sum;
+
+
+    return sum;
+}
+
+
+int main() {
+
+    int n, n1, n2;
+    string mat1, mat2;
+    int count = 0;
+
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        cin >> mat1 >> mat2;
+        n1 = matToNum(mat1);
+        n2 = matToNum(mat2);
+        if (matGen(mat1) < matGen(mat2)) {
+
+            count = n2 - n1;
+
+
+
+        } else if (matGen(mat1) > matGen(mat2)) {
+
+            count = n1 - n2;
+
+        }
+        else {
+            if (n1 > n2) {
+                count = n1 - n2;
+            } else {
+                count = n2 - n1;
+            }
+        }
+
+
+        cout << count << endl;
+
+    }
+    return 0;
+}
+

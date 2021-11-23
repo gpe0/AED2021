@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\Utilizador\Documents\GitHub\AED2021\aed2122_p04
+"D:\clion\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" D:\CODE\C++\AED2021\aed2122_p04
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p04/cmake-build-debug
+-- Build files have been written to: D:/CODE/C++/AED2021/aed2122_p04/cmake-build-debug

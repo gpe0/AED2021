@@ -18,28 +18,36 @@ public:
 //TODO
 template <class T> 
 bool StackExt<T>::empty() const {
-	return true;
+	return values.empty();
 }
 
 //TODO
 template <class T> 
 T& StackExt<T>::top() {
-    return *new T();
+    return values.top();
 }
 
 //TODO
 template <class T> 
 void StackExt<T>::pop() {
+    if (!(minimums.empty()) && values.top() == minimums.top()) {
+        minimums.pop();
+    }
+    values.pop();
 }
 
 //TODO
 template <class T> 
 void StackExt<T>::push(const T& val) {
+    if (minimums.empty() || val < minimums.top()) {
+        minimums.push(val);
+    }
+    values.push(val);
 }
 
 //TODO
 template <class T> 
 T& StackExt<T>::findMin() {
-    return *new T();
+    return minimums.top();
 }
 

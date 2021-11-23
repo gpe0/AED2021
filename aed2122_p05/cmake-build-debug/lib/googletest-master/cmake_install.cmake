@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/lib/googletest-master
+# Install script for directory: D:/CODE/C++/AED2021/aed2122_p05/lib/googletest-master
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "D:/mingww/mingw64/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/cmake-build-debug/lib/googletest-master/googlemock/cmake_install.cmake")
+  include("D:/CODE/C++/AED2021/aed2122_p05/cmake-build-debug/lib/googletest-master/googlemock/cmake_install.cmake")
 
 endif()
 

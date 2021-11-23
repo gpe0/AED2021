@@ -129,8 +129,9 @@ queue<Kid> Game::rearrange() {
             it = k1.begin();
             for (int i = 0; i < p; i++) {
                 kids.push_back(*it);
-                k1.pop_front();
                 it++;
+                k1.pop_front();
+
 
             }
         }
@@ -187,13 +188,18 @@ bool Game::operator==(Game& g2) {
 }
 
 // TODO
+
+
 list<Kid> Game::shuffle() const {
 	list<Kid> newkids;
-    list<Kid> temp;
+
+    list<Kid> temp = kids;
+
     while (temp.size() > 0) {
         list<Kid>::iterator it = temp.begin();
+        int val = rand() % temp.size();
 
-        for (int i = 0; i < (rand() % temp.size()); i++) {
+        for (int i = 0; i < val; i++) {
             it++;
         }
 
@@ -201,6 +207,5 @@ list<Kid> Game::shuffle() const {
         temp.erase(it);
 
     }
-
     return newkids;
 }

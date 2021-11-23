@@ -224,6 +224,7 @@ TEST(test_1, f_Shuffle){
     EXPECT_EQ(false, game1 == game2);
 }
 
+
 TEST(test_2, FindMin){
     StackExt<int> s1;
     // Testing empty()

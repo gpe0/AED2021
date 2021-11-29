@@ -1,0 +1,92 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+#include <algorithm>
+#include <list>
+
+
+using namespace std;
+
+int numWords(string phrase) {
+    int count = 1;
+    for (int i = 0; i < phrase.size(); i++) {
+        if (phrase[i] == ' ') {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+
+    int num;
+    cin >> num;
+    string phrase;
+
+
+
+
+
+    for (int i = 0; i < num; i++) {
+
+        getline(cin, phrase); // clean \n
+        getline(cin, phrase);
+
+        int n = numWords(phrase);
+
+        int kidsN;
+
+        cin >> kidsN;
+
+        list<string> kids;
+
+        for (int j = 0; j < kidsN; j++) {
+            string temp;
+
+            cin >> temp;
+
+            kids.push_back(temp);
+
+        }
+
+
+        int last = 0;
+
+        while (kids.size() > 1) {
+            list<string>::iterator it = kids.begin();
+            int ind = (n + last - 1) % kids.size();
+            last = ind;
+
+            if (last == kids.size() - 1) {
+                last = 0;
+            }
+
+            for (int i = 0; i < ind; i++) {
+                it++;
+                if (it == kids.end()) {
+                    it = kids.begin();
+                    last = 0;
+                }
+            }
+            kids.erase(it);
+        }
+
+        string k;
+        for (auto x: kids) {
+            k = x;
+        }
+
+        if (k == "Carlos") {
+            cout << "O Carlos nao se livrou" << endl;
+        } else {
+            cout << "O Carlos livrou-se (coitado do " << k << "!)" << endl;
+        }
+
+    }
+
+
+
+    return 0;
+}
+

@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/CODE/C++/AED2021/aed2122_p05/Tests/game.cpp" "D:/CODE/C++/AED2021/aed2122_p05/cmake-build-debug/CMakeFiles/aed2122_p05.dir/Tests/game.cpp.obj"
-  "D:/CODE/C++/AED2021/aed2122_p05/Tests/kid.cpp" "D:/CODE/C++/AED2021/aed2122_p05/cmake-build-debug/CMakeFiles/aed2122_p05.dir/Tests/kid.cpp.obj"
-  "D:/CODE/C++/AED2021/aed2122_p05/Tests/tests.cpp" "D:/CODE/C++/AED2021/aed2122_p05/cmake-build-debug/CMakeFiles/aed2122_p05.dir/Tests/tests.cpp.obj"
-  "D:/CODE/C++/AED2021/aed2122_p05/main.cpp" "D:/CODE/C++/AED2021/aed2122_p05/cmake-build-debug/CMakeFiles/aed2122_p05.dir/main.cpp.obj"
+  "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/Tests/game.cpp" "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/cmake-build-debug/CMakeFiles/aed2122_p05.dir/Tests/game.cpp.obj"
+  "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/Tests/kid.cpp" "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/cmake-build-debug/CMakeFiles/aed2122_p05.dir/Tests/kid.cpp.obj"
+  "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/Tests/tests.cpp" "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/cmake-build-debug/CMakeFiles/aed2122_p05.dir/Tests/tests.cpp.obj"
+  "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/main.cpp" "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/cmake-build-debug/CMakeFiles/aed2122_p05.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -28,8 +28,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "D:/CODE/C++/AED2021/aed2122_p05/cmake-build-debug/lib/googletest-master/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "D:/CODE/C++/AED2021/aed2122_p05/cmake-build-debug/lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/cmake-build-debug/lib/googletest-master/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p05/cmake-build-debug/lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p06/Tests/binaryTree.h
+iostream
+-
+stack
+-
+queue
+-
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p06/Tests/bst.h
+iostream
+-
+stack
+-
+queue
+-
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p06/Tests/dictionary.cpp
+iostream
+-
+string
+-
+fstream
+-
+sstream
+-
+dictionary.h
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p06/Tests/dictionary.h
+binaryTree.h
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p06/Tests/binaryTree.h
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p06/Tests/dictionary.h
+string
+-
+fstream
+-
+bst.h
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p06/Tests/bst.h
+

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p07/Tests/bst.h
+iostream
+-
+stack
+-
+queue
+-
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p07/Tests/funWithBSTs.cpp
+funWithBSTs.h
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p07/Tests/funWithBSTs.h
+bst.h
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p07/Tests/bst.h
+map
+-
+set
+-
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p07/Tests/funWithBSTs.h
+vector
+-
+string
+-
+

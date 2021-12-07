@@ -49,7 +49,6 @@ class BinaryTree {
     void outputPreorder(ostream &out) const;
 };
 
-
 template <class T>
 BinaryTree<T>::BinaryTree(const T& el) {
     root = new BTNode<T>(el);

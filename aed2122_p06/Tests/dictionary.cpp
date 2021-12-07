@@ -52,15 +52,17 @@ string Dictionary::consult(string word1, WordMean& previous, WordMean& next) con
     string w = "word not found";
     for (iteratorBST<WordMean> it = words.begin(); it != words.end(); it++) {
 
-        if (word1 < (*it).getWord()) {
+        string wordIt = (*it).getWord();
+
+        if (wordIt < word1) {
             previous = *it;
         }
-        if (word1 == (*it).getWord()) {
+        if (word1 == wordIt) {
             w = (*it).getMeaning();
-            it++;
-            if (it != words.end()) {
-                next = *it;
-            }
+        }
+        if (word1 < wordIt) {
+            next = *it;
+            break;
         }
 
     }

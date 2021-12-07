@@ -62,6 +62,7 @@ public:
     iteratorBST<Comparable> begin() const;
     iteratorBST<Comparable> end() const;
     int size(const Comparable& el) const;   //new
+    int getSize(BinaryNode<Comparable>* bn) const;
 };
 
 // Note that all "matching" is based on the < method.
@@ -463,7 +464,34 @@ bool iteratorBST<Comparable>::operator!= (const iteratorBST<Comparable>& it2) co
 //TODO
 template <class Comparable>
 int BST<Comparable>::size(const Comparable& el) const {
-    return -1;
+    BinaryNode<Comparable>* bn = find(el, root);
+    if (bn == NULL) {
+        return -1;
+    } else {
+        int size = getSize(bn) - 1;
+        return size;
+    }
+
 }
+
+template <class Comparable>
+int BST<Comparable>::getSize(BinaryNode<Comparable>* bn) const {
+    if (bn->left == NULL && bn->right == NULL) {
+        return 1;
+    }
+
+    if (bn->left == NULL) {
+        return getSize(bn->right) + 1;
+    }
+
+    if (bn->right == NULL) {
+        return getSize(bn->left) + 1;
+    }
+
+    return getSize(bn->right) + getSize(bn->left) + 1;
+
+
+}
+
 
 #endif

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p10/Tests/disjointSets.h
+unordered_map
+-
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p10/Tests/graph.cpp
+graph.h
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p10/Tests/graph.h
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p10/Tests/graph.h
+minHeap.h
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p10/Tests/minHeap.h
+disjointSets.h
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p10/Tests/disjointSets.h
+vector
+-
+list
+-
+iostream
+-
+
+C:/Users/Utilizador/Documents/GitHub/AED2021/aed2122_p10/Tests/minHeap.h
+vector
+-
+unordered_map
+-
+
